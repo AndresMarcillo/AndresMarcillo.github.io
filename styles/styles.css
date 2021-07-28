@@ -1,0 +1,36 @@
+* {
+    font-family: sans-serif;
+}
+
+.backgrnd {
+    display: block;
+    background-color: gray;
+    /*opacity: 50%;*/
+    width: 650px;
+    height: 500px;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin: auto;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: yellow;
+}
+
+img {
+    margin-top: 1.5rem;
+    width: 391px;
+    height: 293px;
+}
+
+body {
+    background-image: url("../assets/img/mountain.jpg");
+    background-size: 100%;
+}
