@@ -1,5 +1,7 @@
 * {
     font-family: sans-serif;
+
+    --color_background: pink;
 }
 
 .backgrnd {
@@ -30,7 +32,148 @@ img {
     height: 293px;
 }
 
-body {
+.body {
     background-image: url("../assets/img/mountain.jpg");
     background-size: 100%;
+}
+
+.back {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    animation-name: beat_back;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.heart {
+    position: absolute;
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    background-color: var(--color_background, blue);
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    border-color: blue;
+}
+
+.heart:hover {
+    animation-name: heart;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.heart::after {
+    position: absolute;
+    background-color: var(--color_background, blue);
+    content: "";
+    top: 0;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.heart::before {
+    position: absolute;
+    background-color: var(--color_background, blue);
+    content: "";
+    top: -25px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(0.6) rotate(-45deg);
+    }
+    100% {
+        top: 75px;
+    }
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(0.6) rotate(-45deg);
+    }
+}
+
+@keyframes beat_back {
+    50% {
+        background-color: rgb(241, 226, 207);
+    }
+}
+
+.animation {
+    position: absolute;
+    margin: auto;
+    height: 75px;
+    width: 75px;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: rgb(80, 214, 181);
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    0% {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    33% {
+        top: 50px;
+        left: 125px;
+    }
+    66% {
+        top: 100px;
+        right: 125px;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.boton {
+    position: absolute;
+    background-color: blueviolet;
+    padding: 10px;
+    color: white;
+}
+
+.boton:hover {
+    animation-name: boton;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes boton {
+    100% {
+        background-color: red;
+    }
 }
